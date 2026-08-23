@@ -1,6 +1,6 @@
 # 📊 Data Engineering & Cloud Data Warehousing
 
-Welcome to the **Data Engineering & Data Warehousing** repository! This repository serves as a comprehensive collection of coursework, laboratory guides, hands-on assignments, architectural documentations, ETL job designs, and analytical datasets covering core principles of data engineering, dimensional modeling, cloud data warehousing, data integration, and business intelligence.
+Welcome to the **Data Engineering & Data Warehousing** repository! This repository serves as a comprehensive collection of coursework, laboratory guides, hands-on assignments, architectural documentations, ETL job designs, and analytical datasets covering core principles of data engineering, dimensional modeling, cloud data warehousing (**Snowflake**, **AWS Redshift**, **Google BigQuery**), data integration, and business intelligence.
 
 ---
 
@@ -8,7 +8,7 @@ Welcome to the **Data Engineering & Data Warehousing** repository! This reposito
 1. [Overview](#-overview)
 2. [Core Knowledge Domains](#-core-knowledge-domains)
    - [1. Dimensional Modeling & Schema Design](#1-dimensional-modeling--schema-design)
-   - [2. Cloud Data Warehousing (AWS Redshift & Google BigQuery)](#2-cloud-data-warehousing-aws-redshift--google-bigquery)
+   - [2. Cloud Data Warehousing (Snowflake, AWS Redshift & Google BigQuery)](#2-cloud-data-warehousing-snowflake-aws-redshift--google-bigquery)
    - [3. Data Integration & ETL Pipelines (Talend)](#3-data-integration--etl-pipelines-talend)
    - [4. Business Intelligence & Analytics (Tableau)](#4-business-intelligence--analytics-tableau)
 3. [Repository Directory & File Map](#-repository-directory--file-map)
@@ -24,7 +24,8 @@ Welcome to the **Data Engineering & Data Warehousing** repository! This reposito
 Modern Data Engineering bridges operational source systems and enterprise analytical reporting. This repository documents end-to-end data workflows, including:
 - Designing **Star Schemas** and **Snowflake Schemas** with Fact and Dimension tables.
 - Handling **Slowly Changing Dimensions (SCD)**, Step Dimensions, and Super/Subtype Dimension Patterns.
-- Provisioning and optimizing **AWS Redshift** clusters (Distribution Keys, Sort Keys, S3 COPY commands).
+- Provisioning and configuring **Snowflake Data Warehouses** (Virtual Warehouses, querying database schemas like `snowbearair_db.promo_catalog_sales`, JSON semi-structured data querying, decoupled compute & storage).
+- Provisioning and optimizing **AWS Redshift** clusters (Distribution Keys, Sort Keys, S3 `COPY` commands).
 - Designing **Google BigQuery** data warehouses leveraging partitioned and clustered tables.
 - Building robust **ETL/ELT Data Integration Pipelines** using **Talend Open Studio** / Talend Cloud.
 - Developing interactive dashboards and advanced data visualizations in **Tableau Desktop**.
@@ -35,6 +36,7 @@ Modern Data Engineering bridges operational source systems and enterprise analyt
 
 ### 1. Dimensional Modeling & Schema Design
 - **Concepts**: Business Process Matrix, Grain Definition, Fact Tables (Transaction, Periodic Snapshot, Accumulating Snapshot), Dimension Tables.
+- **Star vs Snowflake Schema**: Normalization of dimension hierarchies (Snowflaked Dimensions) vs denormalized Star Schema trade-offs.
 - **Advanced Patterns**:
   - Slowly Changing Dimensions (SCD Type 1, Type 2, Type 3).
   - Super/Subtype dimensions, Step dimensions, and Dimension Hierarchies.
@@ -44,7 +46,12 @@ Modern Data Engineering bridges operational source systems and enterprise analyt
   - [`SCD Practice Questions (1).docx`](./SCD%20Practice%20Questions%20(1).docx)
   - [`Super_Subtype, Step Dimension Practice (2).docx`](./Super_Subtype,%20Step%20Dimension%20Practice%20(2).docx)
 
-### 2. Cloud Data Warehousing (AWS Redshift & Google BigQuery)
+### 2. Cloud Data Warehousing (Snowflake, AWS Redshift & Google BigQuery)
+- **Snowflake Data Platform**:
+  - Multi-cluster shared-data cloud architecture.
+  - Decoupled storage and compute (Virtual Warehouses).
+  - Query execution over structured and semi-structured (JSON/VARIANT) data.
+  - Practical Lab & Assignment: Provisioning Virtual Warehouses and executing analytical SQL queries on `snowbearair_db.promo_catalog_sales`.
 - **AWS Amazon Redshift**:
   - Columnar storage architecture, Node types (RA3, Dense Storage/Compute).
   - Data distribution styles (`KEY`, `EVEN`, `ALL`).
@@ -56,7 +63,7 @@ Modern Data Engineering bridges operational source systems and enterprise analyt
   - Table Partitioning (by ingestion time or column timestamp/date) and Clustering.
   - Document: [`Cloud Data warehousing_BigQ_v2.docx`](./Cloud%20Data%20warehousing_BigQ_v2.docx)
 - **Hands-on Assignments**:
-  - [`RN7945_Assignment 3-Cloud DW Assignment_v2 (1).docx`](./RN7945_Assignment%203-Cloud%20DW%20Assignment_v2%20(1).docx)
+  - [`RN7945_Assignment 3-Cloud DW Assignment_v2 (1).docx`](./RN7945_Assignment%203-Cloud%20DW%20Assignment_v2%20(1).docx) (Snowflake & Cloud DW)
   - [`Assignment 3-Cloud DW Assignment_v2.docx`](./Assignment%203-Cloud%20DW%20Assignment_v2.docx)
 
 ### 3. Data Integration & ETL Pipelines (Talend)
@@ -86,9 +93,9 @@ Modern Data Engineering bridges operational source systems and enterprise analyt
 | :--- | :--- | :--- |
 | **Assignments** | [`RN7945Assignment 1_Dimensional Modeling.docx`](./RN7945Assignment%201_Dimensional%20Modeling.docx) | Assignment 1: Dimensional Modeling & ERD Design |
 | | [`RN7945_Assignment 2_Tableau Analysis (1).docx`](./RN7945_Assignment%202_Tableau%20Analysis%20(1).docx) | Assignment 2: Business Analytics & Tableau Dashboards |
-| | [`RN7945_Assignment 3-Cloud DW Assignment_v2 (1).docx`](./RN7945_Assignment%203-Cloud%20DW%20Assignment_v2%20(1).docx) | Assignment 3: AWS Redshift & Google BigQuery Implementation |
+| | [`RN7945_Assignment 3-Cloud DW Assignment_v2 (1).docx`](./RN7945_Assignment%203-Cloud%20DW%20Assignment_v2%20(1).docx) | Assignment 3: Snowflake, AWS Redshift & Google BigQuery |
 | | [`RN7945_Assignment 4-Data Integration-v3 .docx`](./RN7945_Assignment%204-Data%20Integration-v3%20.docx) | Assignment 4: Talend ETL Data Integration |
-| **Labs** | [`RN7945_Lab 1_Dimensional Modeling-2U-1.docx`](./RN7945_Lab%201_Dimensional%20Modeling-2U-1.docx) | Lab 1: Dimensional Modeling hands-on exercises |
+| **Labs** | [`RN7945_Lab 1_Dimensional Modeling-2U-1.docx`](./RN7945_Lab%201_Dimensional%20Modeling-2U-1.docx) | Lab 1: Dimensional Modeling & Snowflake Schema exercises |
 | | [`RN7945Lab 2_Tableau Basic-1.pdf`](./RN7945Lab%202_Tableau%20Basic-1.pdf) | Lab 2: Introduction to Tableau Desktop |
 | | [`RN7945_Lab 3_Advanced Tableau.docx`](./RN7945_Lab%203_Advanced%20Tableau.docx) | Lab 3: Advanced Tableau Visualizations & LOD Expressions |
 | **Architecture & Guides** | [`Cloud Data Warehousing_RedShift-2.docx`](./Cloud%20Data%20Warehousing_RedShift-2.docx) | Guide to AWS Redshift architecture & loading |
@@ -104,12 +111,14 @@ Modern Data Engineering bridges operational source systems and enterprise analyt
 
 ## 🗄 Datasets & Data Sources
 
-1. **AWS TICKIT Database (`tickitdb.zip`)**:
+1. **Snowflake Promo Catalog Sales Database (`snowbearair_db.promo_catalog_sales`)**:
+   - Used in Assignment 3 for warehouse querying, filtering, and catalog sales aggregation.
+2. **AWS TICKIT Database (`tickitdb.zip`)**:
    - Contains 7 tables representing a sports/event ticketing database: `USERS`, `VENUE`, `CATEGORY`, `DATE`, `EVENT`, `LISTING`, `SALES`.
    - Used for demonstrating Redshift distribution/sort keys and join optimizations.
-2. **Superstore Sales (`Sample - Superstore.xlsx`)**:
+3. **Superstore Sales (`Sample - Superstore.xlsx`)**:
    - Retail sales order data including Orders, Returns, and People across various regions.
-3. **Partitioned Customer & Order CSV Files**:
+4. **Partitioned Customer & Order CSV Files**:
    - CSV datasets (`Cust_Part1`, `Cust_Part2`, `Cust_Part3`, `CustomerDetail`, `OrderLine`, `Charges`, `Product`) for testing file merging and pipeline staging in Talend.
 
 ---
@@ -117,6 +126,7 @@ Modern Data Engineering bridges operational source systems and enterprise analyt
 ## 🛠 Prerequisites & Tools Setup
 
 - **Database / Data Warehousing**:
+  - Snowflake Data Cloud Account (Virtual Warehouses)
   - AWS Account (Amazon Redshift, Amazon S3, AWS IAM)
   - Google Cloud Platform (Google BigQuery)
 - **ETL / Integration**:
